@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 - Notes</title>
+</head>
+
+<body>
+    <h1>Week 1 - Notes</h1>
+
+    <p>
+        ** Doing Stuff with WebThings Reading Notes: <br>
+        <br>
+        <u>Steps to success:</u>
+        <ol>
+            <li>THINK - find out what you dont know and learn it by playing 
+                with it (sandboxing).
+            </li>
+            <li>DESIGN - use what you have just learned to layout a solution 
+                to the problem.
+            </li>
+            <li>TEST - Create a series of expectations for behavior that will 
+                indicate if you have been successful.
+            </li>
+            <li>CREATE - Write the code!</li>
+        </ol>
+    </p>
+
+    <p>
+        <u>JS Reminders:</u>
+        <ul>
+            <li>When you want to GET the user INPUT from any input or text area 
+                tag, you use the word "value". <br>
+                ex:  var storyName = document.getElementById("name_imput").value;
+            </li>
+            <li>To SHOW something to a user, you use a section and the word 
+                "innerHTML". <br>
+                ex:  document.getElementById("story_display").innerHTML = storyHTML; 
+            </li>
+        </ul>
+    </p>
+
+    <p>
+        <u>Local Storage:</u><br>
+            Stores the value (key-value pairs) of a variable.<br>
+            Its an associative array. <br>
+            ex:  localStorage.setItem(storyName.storyHTML); <br>
+            -OR- localStorage["all_customers"] = allCustomersString; <br>
+            <br>
+            -To retrieve or load from storage: <br>
+            ex:  var storyHTML = localStorage.getItem(storyName); <br>
+            -OR- var storedCustomersString = localStorage["all_customers"];
+    </p>
+
+    <p>
+        <u>Associate Arrays:</u><br>
+            To represent a "thing" in JavaScript, or putting a list of 
+            attributes inside a variable. <br>
+            <br>
+            ex:  var aName = { <br>
+                    attributeType:attributeName,<br>
+                    attributeType:attributeName,<br>
+                    .<br>
+                    .<br>
+                    .<br>
+                }<br>
+                <br>
+            The name of an associative array's attributeType is it's 
+            "key" and the attributeName is called the "value" -- key-value pair.<br>
+            <br>
+            * Dont forget to put strings in " ".<br>
+            ex:  "name":"Cheryl", <br>
+                 "age":40;
+    </p>
+
+    <hr>
+
+    <p>
+        ** Master Mobile UX - SitePoint Video<br>
+        <br>
+        *<u>Mobile 1st Design:</u><br>
+        "Design for the smallest, least powerful device first... focus on content 
+        and core functionality... This leads to simple, beautiful apps."
+    </p>
+
+    <p>
+        <u>Things to remember:</u><br>
+        <ul>
+            <li>Desktop computers have been declining since 2011.</li>
+            <li>People are walking around with phones not laptops.</li>
+            <li>Start small and scale up.</li>
+            <li>Mobile is not a fad, its not going away.</li>
+        </ul>
+    </p>
+
+    <p>
+        <u>Reachability matters:</u><br>
+        75% of people use their thumbs to navigate their mobile device.  Keep 
+        clickable items like menus in thumb reachable places (at the bottom).
+    </p>
+
+    <p>
+        <u>Speed matters:</u><br>
+        <ul>
+            <li>Reduce img usage throughout sites/apps.</li>
+            <li>SVG and Webfonts are lower bandwidth.</li>
+            <li>Optimize and minify CSS and JS files.</li>
+            <li>GZIP files to eliminate unnecessary data.</li>
+        </ul>
+    </p>
+
+    <p>
+        <u>Design Intuitive and Mobile Friendly Forms:</u><br>
+        <ul>
+            <li>Use placeholder text in fields and then float the title.</li>
+            <li>Use number pad pop up for entry in number only fields.</li>
+            <li>Link phone numbers to make direct calls.</li>
+        </ul>
+    </p>
+
+    <p>
+        <u>Design better advertising:</u><br>
+        <ul>
+            <li>Display smaller ads - make them bigger when clicked.</li>
+            <li>Pop-ups and autoplay videos are despised - stop using them!</li>
+            <li>Keep it simple and sleek, content should come first.</li>
+        </ul>
+    </p>
+
+
+</body>
+</html>
