@@ -9,12 +9,205 @@
   <body>
     <h1>Week 2 - Notes</h1>
 
+    <h2>Novice to Ninja</h2>
     <p>
-        Stuff
+        <u>Chapter 2 Summary - Programming Basics</u><br>
+        <ul>
+          <li>There are six primitive data types: strings, symbols, numbers, Booleans, undefined and null.</li>
+          <li>Non-primitive data types, such as arrays, functions and objects, all have a type of 'object'.</li>
+          <li>Use the "typeof" operator to find out the datatype of a value.</li>
+          <li>Variables point to values stored in memory and are declared using the <b>const</b> or <b>let</b> keywords.<br>
+              ** We dont use <b>var</b> anymore.<br>
+              Use <u>const</u> when the variable will not be reassigned to another value. (Constant)<br>
+              Use <u>let</u> if the variable might be reassigned later in the program.  (Can change - the new 'var')</li>
+          <li>Backkslashes are the escape mark - used to escape special characters in strings:<br>
+              -single quote \', -double quote \", -end of line \n, -carriage return \r, -tab \t, backslash \\ </li>
+          <li>Template literals: use BACKTICKS (`) instead of quote marks for string literals.<br>
+              This allows JS expressions to be inserted inside a string.<br>
+              example:  const age = 39;<br>
+                        `I will be ${age + 1} next year!`<br>
+                        output:  "I will be 40 next year!"</li>
+          <li>Symbols are unique, immutable values.<br>
+              The only way to create them is to use the symbol() function.</li>
+          <li>There are only seven values that are false in JavaScript and these are known as 'falsy' values.</li>
+          <li>Data types can be converted into other data types.</li>
+          <li>Type coercion is when JavaScript tries to convert a value into another data type in order to perform an operation.</li>
+          <li>Logical operators can be used to check if compound statements are true or false.</li>
+          <li>Values can be compared to see if they are equal, greater than or less than other values.</li>
+        </ul>
     </p>
 
     <p>
-        stuff
+      <u>Chapter 3 Summary - Arrays, Logic, and Loops</u>
+      <ul>
+        <li>Arrays dont have to use the same data types inside of it.</li>
+        <li>Destructuring Arrays:  the concept of taking values out of an array and <br>
+            presenting them as individual values.</li>
+        <li>Declaring an array:<br>
+            const avengers = ['Capt America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black Widow'];</li>
+      </ul>
+    </p>
+
+    <p>
+      <u>Properties & Methods</u>
+      <ul>
+        <li>To find the length:  averngers.length;</li>
+        <li>To remove the last item of the array:  avengers.pop();</li>
+        <li>To remove the first item of the array:  avengers.shift();</li>
+        <li>To append a new value to the end:  avengers.push();</li>
+        <li>To append a new value to the beginning:  avengers.unshift();</li>
+        <li>You can use the concat() method to merge with one or more arrays.<br>
+            *Note that this does not change the array, it creates another array.<br>
+            You can use the assignement (=) to update the array to this new array:<br>
+            ex:  avengers = avengers.concat(['Batman', 'Spiderman', 'Green Lantern']);</li>
+        <li>The join() method can be used to turn the array into a string that<br>
+            comprises all the items in the array, separated by commas.<br>
+            ex:  avengers.join();<br>
+            You can also choose a different seperator like '&' by placing it in the ().<br>
+            ex:  avengers.join('&');</li>
+        <li>The slice() method creates a subarray.  It is non-destructive, so no<br>
+            items are removed from the array, it just shows you what thse items are.<br>
+            ex:  avengers.slice(2,4) //this starts at the 3rd item (index 2)<br>
+            // and it finishes at index 4 (not inclusive).  Output: "['Thor', 'Hulk']"</li>
+        <li>The splice() method REMOVES the items, then inserts new items in their place.<br>
+            ex:  avengers.splice(3, 1, 'Scarlet Witch');<br>
+            *This method is destructive as it changes the values of the array.<br>
+            This first number in this method tells us the index at which to start<br>
+            the splice (index 3).  The second number tells us how many items to remove (1).<br>
+            And then the 3rd thing is the insert.</li>
+          <li>You may also use splice() to insert items at a specific index without<br>
+              removing anything by indicating 0 items to be removed in the second<br>
+              number position.<br>
+              ex:  avengers.splice(4, 0, 'Quicksilver');</li>
+          <li>You may also use splice() to delete items without inserting new.<br>
+              ex:  avengers.splice(2, 1);<br>
+              *This will remove 1 item starting at index 2 completely.</li>
+      </ul>
+    </p>
+
+    <p>
+      <u>Other stuff:</u>
+      <ul>
+        <li>Multidimensional arrays:<br>
+            ex:  const coordinates = [[1,3],[4,2]]; </li>
+        <li>To access the values in Multidimensional arrays, we use two indices:<br>
+            One to refer to the items place in the outer array, and one to  refer<br>
+            to its place in the inner array.<br>
+            examples:<br>
+            coordinates[0][0]; //1st value of the 1st array<br>
+            coordinates[1][0]; //1st value of the 2nd array<br>
+            coordinates[0][1]; //2nd value of the 1st array<br>
+            coordinates[1][1]; //2nd value of the 2nd array</li>
+        <li>Sets:  A set is a data structure that represents a collection of unique<br>
+                  values, so it cannot include any duplicate values.</li>
+        <li>To create one:  const list = new Set();<br>
+            To add values:  list.add(1);<br>
+            Add multiple items:  list.add(2).add(3).add(4);<br>
+            -OR-<br>
+            const numbers = new Set([1,2,3]);</li>
+        <li>Anything repeated will only appear once in the set.  This give a<br>
+            convenient way of eliminating duplicate values from an array with<br>
+            a single operation.</li>
+        <li>If a string is used as teh argument in a set, each character will<br>
+            be added separately with repeated chars ignored.</li>
+        <li>To add separate words to a set, you need to use the add() method.<br>
+            ex:  const words - new Set().add('the').add('quick').add('fox');</li>
+        <li>You can do this with arrays too:<br>
+            const arrays = new Set().add([1]).add([1]);<br>
+            *The arrays may look the same, but are considered different objects.</li>
+        <li>Set Methods:<br>
+            -To find the # of values in a set = size(); ex: numbers.size();<br>
+            -To check if a value is present = has(); ex: numbers.has(7);<br>
+            -To remove values from a set = delete(); ex: numbers.delete(2);<br>
+            -To remove ALL values from a set = clear(); ex: numbers.clear();</li>
+        <li>To convert a set into an array:<br>
+            -Use the spread operator (...) directly inside the array literal.<br>
+            ex:  const shoppingArray = [...shoppingSet]</li>
+        <li>Maps: a convenient way of keeping a list of key and value pairs.<br>
+            Similar to 'hashes', 'hash tables', or 'dictionaries' in other pl's.</li>
+      </ul>
+    </p>
+
+    <p>
+      <u>Looping over arrays:</u>
+      <ul>
+        <li>for(let i = 0, max = avengers.length; i < max; i++){<br>
+                console.log(avengers[i]); }<br>
+            *Setting a max variable is preferable to using "i < avengers.length"<br>
+            because then the length of the array would have to be calculated<br>
+            after every pass thru.  This makes a difference to speed<br>
+            when using large arrays.</li>
+        <li>New iterator function for arrays: THE for-of LOOP:<br>
+            <br>
+            for(const value of avengers){<br>
+              console.log(value);  }</li>
+        <li>This replaces all the setup of a for loop with a variable that<br>
+            represents the value of each element in the array.  Note that<br>
+            this variable needs to be declared using "const".</li>
+      </ul>
+    </p>
+
+    <p>
+      <u>Chapter 4 Summary - Functions</u>
+      <ul>
+        <li>Function Declarations:<br>
+            ex:  function hello(){<br>
+                    console.log('Hello World!'); }</li>
+        <li>Function Expressions:<br> 
+          (this one assigns an anonymous function to a variable)<br>
+            ex:  const goodbye = function(){<br>
+                    console.log('Goodbye World!'); }<br>
+          (this one aassigns a named function to a variable<br>
+            ex:  const goodbye = function bye(){<br>
+                    console.log('Bye-bye!'); }</li>
+        <li>The difference between parameters and arguments:<br>
+            -Parameters a function needs are set when the function<br>
+              is DEFINED.<br>
+            -Arguments are passed to the function when it is INVOKED.</li>
+        <li>To have a variable number of arguments: use the rest operator (...)<br>
+            This will collect all teh arguments entered into an array.<br>
+            ex:  function mean(...values){<br>
+                    let total = 0;<br>
+                    for(const value of values){<br>
+                        total += value;  }<br>
+                    return total/values.length;  }</li>
+        <li>Default parameters:  a value set to be used if no arguments are provided.<br>
+            ex:  function hello(name = 'World'){<br>
+                    console.log(`Hello ${name}!`);  }<br>
+              -If no argument is passed:  hello();<br>
+              output = 'Hello World!'<br>
+              -If argument IS passed:  hello('Cheryl');<br<>
+              output = 'Hello Cheryl!'</li>
+        <li>Default parameters should ALWAYS come after non-default parameters:<br>
+            ex:  function discount(price, amount = 10){<br>
+                    return price * (100-amount)/100;  }<br>
+            - discount(20); //standard discount of 10% on $20<br>
+            - discount(15, 20); //discount of 20% on $15</li>
+        <li>Arrow Functions:  uses less syntax for declaring functions.<br>
+            - Identified with the arrow symbol (=>).<br>
+            - The parameters come before the =>, and the main body<br>
+              of the function comes after.<br>
+            - They are always anonymous, so you have to assign them to a variable.<br>
+            ex:  const square = x => x * x;<br>
+                const hello = () => alert('Hello!);<br>
+                const add = (x, y) => x + y;<br>
+            - These dont need block {} or return keywords.<br>
+            - If the function ismore than one line, this method is not practical.<br>
+              Best for short, anonymous functions.</li>
+        <li>Callbacks:  A function that is passed as an argument to another function.<br>
+              The callback is provided as a parameter and invoked inside the body.<br>
+            ex:  function sing(song, callback){<br>
+                    console.log(`I'm singing along to ${song}`);<br>
+                    callback();  }<br>
+                    <br>
+                  function dance(){<br>
+                    console.log("I'm moving my body to the groove.");  }<br>
+                  <br>
+                -Now we call our sing function and callback dance:<br>
+                sing('Let It Go', dance);<br>
+               - output:  'I'm singing along to Let It Go'<br>
+                          'I'm moving my body to the groove.'</li>
+      </ul>
     </p>
 
     
