@@ -9,9 +9,124 @@
   <body>
     <h1>Week 3 - Notes</h1>
 
+    <h2>Article Object methods: this</h2>
+    <ul>
+      <li>Functions that are stored in object properties are called “methods”.</li>
+      <li>Methods allow objects to “act” like object.doSomething().</li>
+      <li>Methods can reference the object as this.</li>
+      <li>The value of this is defined at run-time.</li>
+      <li>When a function is declared, it may use this, but that this has no<br>
+         value until the function is called.</li>
+      <li>A function can be copied between objects.</li>
+      <li>When a function is called in the “method” syntax: object.method(), the<br>
+         value of this during the call is object.</li>
+      <li>Please note that arrow functions are special: they have no this. When<br>
+         this is accessed inside an arrow function, it is taken from outside.</li>
+    </ul>
+
+    <h2>Team Activity Reading - Array Iterations</h2>
+    <ul>
+      <li>When you call an array method that iterates, you provide a callback function.</li>
+    </ul>
+    
     <h2>Novice to Ninja</h2>
     <p>
-        <u>Chapter 2 Summary - Programming Basics</u><br>
+        <u>Chapter 5 Summary - Objects</u><br>
+        <ul>
+          <li>Object Literals = an object that is created directly in the language by wrapping <br>
+              all its properties and methods in curly braces {}.<br>
+              -- Each property is a key-value pair, separated by commas.</li>
+          <li>Accessing Properties = You can access the properties of an object using <br>
+              the dot ( . ) or bracket ( [] ) notation.<br>
+              -- Dot notation:  superman.name<br>
+              -- Bracket notation:  superman['name']<br>
+              Dot notation is more common, but with bracket you can access non-standard property <br>
+              and method names.</li>
+          <li>Calling Methods = To call an objects method we can use the dot or bracket notations.<br>
+              Calling a method is the same as invoking a function - the () need to be placed after<br>
+              the method name.  Ex:  superman.fly()  -or-  superman['fly']</li>
+          <li>Adding Properties = New properties and methods can be added to objects at any <br>
+              time in a program.  This is done by assigning a value to the new property.<br>
+              Ex:  To add the 'city' property to the superman obj:  superman.city = 'Metropolis';</li>
+          <li>To Change a Property = superman.realName = 'Kal-El';</li>
+          <li>To Remove a Property = use the delete keyword:  delete superman.fly;</li>
+          <li>Nested Objects - the values in nested objects can be accessed by referencing <br>
+              each property name in order using either dot or bracket notation.<br>
+              Ex:<br>
+              dot = jla.wonderWoman.realName<br>
+              bracket = jla['flash']['realName']<br>
+              mixed = jla.aquaman['realName']</li>
+          <li>Keyword 'this' = refers to the object that it is within.  It can be used <br>
+              inside methods to gain access to the object's properties.<br>
+              Ex:<br>
+              const dice = {<br>
+                sides: 6,<br>
+                roll(){<br>
+                  return Math.floor(this.sides * Math.random())+1;<br>
+                }<br>
+              }<br>
+              --This object has a sides property and a roll() method.  Inside the roll() method <br>
+              we use this.sides to refer to the values of the objects sides property.</li>
+          <li>Built-In Objects = the 2 main ones are arrays and functions.</li>
+          <li>Other built in global objects:<br>
+              - JSON (JavaScript Object Notation):  A string representation of the <br>
+                object literal notation.<br>
+              - Math Objects: has different properties & methods.<br>
+              - Date Objects: contains info about dates and times.<br>
+              - RegExp Objects (Regular Expressions): a pattern that can be used to <br>
+                search strings for matches to the pattern.</li>
+                <ul>
+                  <li>Basic RegExp:  a string of characters<br>
+                      Ex:  const pattern = /JavaScript/;</li>
+                  <li>Character Groups:  can be placed together inside square brackets[].<br>
+                      Ex:  const vowels = /aeiou/ (This represents any ONE char.<br>
+                      -To represent a sequence of chars, use a dash.  Ex:  /[A-Z]/<br>
+                      -To negate a sequence, use a ^.  Ex: /[^A-Z]/</li>
+                  <li>Properties:  global (flag=g), ignoreCase(flag=i), multiline (flag=m)<br>
+                      - To use a property, place the flag after the regexp.<br>
+                      Ex:   pattern = /java/i</li>
+                  <li>Special Characters: (aka metacharacters)<br>
+                      ( .  \w  \W  \d  \D  \s  \S )</li>
+                  <li>Modifiers:  can be placed after a token to deal with multiple <br>
+                      occurences of that token: <br>
+                      ( ?  *  +  {n}  {n,}  {,m}  {n,m}  ^  $ )</li>
+                  <li>String methods:  there are a number of string methods that accept <br>
+                      a regExp as a parameter:<br>
+                      ( split()  match()  search()  replace() )</li>
+                </ul>
+        </ul>
+    </p>
+    <p>
+      <u>Chapter 6 Summary - DOM</u>
+      <ul>
+        <li>The Document Object Model is a way of representing a page of HTML as a tree of nodes.</li>
+        <li>The document.getElementById() , document.getElementsByClassName() , document.getElementsByTagNames()<br>
+            and document.querySelector() can be used to access elements on a page.</li>
+        <li>The parentNode() , previousSibling() , nextSibling() , childNodes() and children() methods<br>
+            can be used to navigate around the DOM tree.</li>
+        <li>An element’s attributes can be accessed using the getAttribute() method, and updated<br>
+            using the setAttribute() method.</li>
+        <li>The createElement() and createTextNode() methods can be used to create dynamic markup on the fly.</li>
+        <li>Markup can be added to the page using the appendChild() and insertBefore() methods.</li>
+        <li>Elements can be replaced using the replaceChild() method, and removed using the removeChild() method.</li>
+        <li>The innerHTML property can be used to insert raw HTML directly into the DOM.</li>
+        <li>The CSS properties of an element can be changed by accessing the style property.</li>
+      </ul>
+    </p>
+    <p>
+      <u>Chapter 7 Summary - Events</u>
+      <ul>
+        <li>Events occur when a user interacts with a web page.</li>
+        <li>An event listener is attached to an element, then invokes a callback function when the event occurs.</li>
+        <li>The event object is passed to the callback function as an argument, and contains lots of properties<br>
+            and methods relating to the event.</li>
+        <li>There are many types of event, including mouse events, keyboard events, and touch events.</li>
+        <li>You can remove an event using the removeEventListener method.</li>
+        <li>The default behavior of elements can be prevented using the preventDefault() function.</li>
+        <li>Event propagation is the order the events fire on each element.</li>
+        <li>Event delegation is when an event listener is added to a parent element to capture events that<br>
+            happen to its children elements.</li>
+      </ul>
     </p>
   </body>
 </html>
