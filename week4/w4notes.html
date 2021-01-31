@@ -25,6 +25,28 @@
 
     <p>
       <u>Chapter 12 Summary - Object Oriented Programming in JavaScript</u>
+      <ul>
+        <li>Object-oriented programming (OOP) is a way of programming that uses objects that encapsulate their own properties and methods.</li>
+        <li>The main concepts of OOP are encapsulation, polymorphism and inheritance.</li>
+        <li>Constructor functions can be used to create instances of objects.</li>
+        <li>ES6 introduced class declarations that use the class keyword. These can be used in place of constructor functions.</li>
+        <li>Inside a constructor function or class declaration, the keyword this refers to the object returned by the function.</li>
+        <li>All instances of a class or constructor function inherit all the properties and methods of its prototype.</li>
+        <li>The prototype is live, so new properties and methods can be added to existing instances.</li>
+        <li> The prototype chain is used to find an available method. If an object lacks a method, JavaScript will check<br>
+           whether its prototype has the method. If not, it will check that function’s prototype until it finds the method<br>
+            or reaches the Object constructor function.</li>
+        <li>Private properties and methods can be created by defining variables using const and defining a function inside<br>
+           a constructor function. These can be made public using getter and setter functions.</li>
+        <li>A mixin method can be used to add properties and methods from other objects without creating an inheritance chain.</li>
+        <li>Methods can be chained together and called in sequence if they return a reference to this.</li>
+        <li>Polymorphism allows objects to override shared methods with a more specific implementation.</li>
+        <li>The value of this is not retained inside nested functions, which can cause errors. This can be worked around by<br>
+           using that = this , using the bind(this) method and using arrow functions.</li>
+        <li>Methods can be borrowed from other objects.</li>
+        <li>Composition over inheritance is a design pattern where objects are composed from 'building-block' objects,<br>
+           rather than inheriting all their properties and methods from a parent class.</li>
+      </ul>
     </p>
 
   </body>
