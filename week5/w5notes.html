@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 - Notes</title>
+  </head>
+
+  <body>
+    <h1>Week 5 - Notes</h1>
+    
+    <h2>Novice to Ninja</h2>
+    <p>
+        <u>Chapter 10 Summary - Testing and Debugging</u><br>
+        <ul>
+          <li>Errors, exceptions, and warnings:</li>
+            <ul>
+                <li>System Error - a problem with the system or external devices with which the<br>
+                    program is interacting.</li>
+                <li>Programmer Error - the program contains incorrecr syntax or faulty logic (like typos).</li>
+                <li>User Error - user has entered data incorrectly.</li>
+                <li>Exceptions - an error that produces a return value that can be used by the program <br>
+                    to deal with the error.</li>
+                <li>Stack Trace - a sequence of functions or method calls thaat lead to the point<br>
+                    where the error occured.</li>
+            </ul>
+          <li>Strict Mode:  Produces more exceptions and warnings.  Better to use to catch errors.<br>
+                To enable - add <b>'use strict';</b> to the first line of a JS file.  *Can also use <br>
+                inside a function and it will only be applied to that scope:<br>
+                ex:  function strictly(){<br>
+                        'use strict';<br>
+                        // rest of code<br>
+                }</li>
+          <li>Debugging Basics:</li>
+            <ul>
+                <li>the alert() method</li>
+                <li>console.log() method</li>
+                <li>console.trace() method - this one will log an interactive stack trace in the console.</li>
+            </ul>
+          <li>Debugging Tools:</li>
+            <ul>
+                <li>The 'dugger' keyword - this will create a breakpoint wherever you place it.</li>
+                <li>Error objects - created when an exception occurs</li>
+                <li>Throwing exceptions - use the 'throw' stmt</li>
+                <li>Try, Catch, and Finally - Any code placed inside a try block will pass any<br>
+                     error objects to a catch block when an exception occurs. Any code inside a <br>
+                     finally block will run if an exception does or does not occur.</li>
+            </ul>
+          <li>Test-driven Development (TDD):  the process of writing tests BEFORE any actual code.</li>
+            <ol>
+                <li>Write tests (that initially fail)</li>
+                <li>Write code to pass the tests</li>
+                <li>Refactor the code</li>
+                <li>Test refactored code</li>
+                <li>Write more tests for new features</li>
+            </ol>
+          <li>Bugs are unavoidable in code, and it’s best to find them early rather than later.</li>
+          <li>Linting tools can be used to ensure your code follows good practice and conventions.</li>
+          <li>Feature detection can check whether a method is supported before calling it, <br>
+                helping to avoid an exception being thrown.</li>
+          <li>The Jest framework can be used to test your code.</li>
+        </ul>
+    </p>
+
+  </body>
+</html>
