@@ -12,6 +12,7 @@ function deleteTodo(id) {
     localStorage.setItem('toDoList', JSON.stringify(updatedTodos));
 }
 
+// LIST OF ALL ITEMS
 function getTodoList() {
     const todoListString = localStorage.getItem('toDoList');
     let toDoList = [];
@@ -23,8 +24,22 @@ function getTodoList() {
     return toDoList;
 }
 
+// update todo item completed status
+function updateCompleted(id, status) {
+    let toDoList = getTodoList();
+    toDoList.map(todo => {
+        if(todo.id.toString() === id) {
+            todo.completed = status;
+            deleteTodo(id);
+            saveTodo(todo);
+        }
+    })
+}
+
+
 export default {
     saveTodo,
     deleteTodo,
-    getTodoList
+    getTodoList,
+    updateCompleted
 }

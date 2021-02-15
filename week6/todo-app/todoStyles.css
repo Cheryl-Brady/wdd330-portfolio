@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Raleway&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: purple;
+}
+
+.container {
+    display: block;
+    margin: auto;
+}
+
+h1 {
+    font-family: 'Abril Fatface', cursive;
+    text-align: center;
+    padding: 20px;
+}
+
+/*  TASKS LIST */
+#todos {
+    display: block;
+    margin: 5px auto;
+    min-width: auto;
+    max-width: 55%;
+    
+}
+
+.todo {
+    display: flex;
+    position: relative;
+    font-size: 20px;
+    padding: 5px;
+    border: 2px solid black;
+    width: 100%;
+}
+
+.todo-content {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.completedItem .todo-content {
+    text-decoration: line-through;
+    opacity: 0.5;
+    transform: scale(0.96);
+}
+
+.hide {
+    display: none;
+}
+
+/* TASKS BUTTONS */
+.complete-btn {
+    border: 1px solid black;
+    margin: 0 10px 0 5px;
+    padding: 3px;
+    height: 30px;
+    width: 30px;
+    font-size: 27px;
+    align-content: flex-start;
+}
+
+.delete-btn {
+    border: none;
+    margin: 0 5px 0 10px;
+    height: 30px;
+    width: 30px;
+    font-size: 22px;
+    background: white;
+    position: absolute;
+    right: 10px;
+}
+
+/* FILTER BUTTONS */
+.todo-filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    margin: auto;
+    padding: 10px;
+    min-width: auto;
+    max-width: 55%;
+}
+
+p {
+    padding: 5px;
+    font-size: .75em;
+}
+
+#allBtn, #activeBtn, #completedBtn {
+    padding: 0.4rem;
+    border: none;
+    font-size: .75em;
+    background: white;
+}
+
+.selectedFilter {
+    border: 2px solid black;
+    padding: 2px;
+}
+
+
+/* ADD TASKS */
+.add-todo-wrapper {
+    display: flex;
+    margin: auto;
+    padding: 10px 0;
+    min-width: auto;
+    max-width: 55%;
+}
+
+#todoInput {
+    border: 2px solid black;
+    height: 50px;
+    width: 90%;
+    font-size: 25px;
+    padding: 0 8px;
+}
+
+#addBtn {
+    border: 2px solid black;
+    margin-left: 5px;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    font-size: 27px;
+}

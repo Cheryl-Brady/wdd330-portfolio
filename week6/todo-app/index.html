@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo List</title>
     <link rel='stylesheet' href='todoStyles.css'>
     <script type="module" src='js/ToDo.js'></script>
+    <title>To-Do List App</title>
 </head>
 
 <body>
     <div class="container">
-        <h1>To Do List</h1>
+        <h1>To-Do List</h1>
 
+        <!-- List of added items -->
         <div class="todos-wrapper">
-            <div id="todos">
-
-            </div>
-
+            <div id="todos"></div>   
             <div class="todo-filters">
-
-            </div>
-
+                <p> <span id="tasks-left"></span> tasks left </p>
+                    <div class="filterBtn selectedFilter"  id="allFilterBtn">All</div>
+                    <div class="filterBtn" id="activeFilterBtn">Active</div>
+                    <div class="filterBtn" id="completedFilterBtn">Completed</div>
+            </div> 
         </div>
 
+        <!-- Add an item input box -->
         <div class="add-todo-wrapper">
             <input id="todoInput" type="text">
-            <button id="addBtn">ADD</button>
+            <button id="addBtn">+</button>
         </div>
 
     </div>
-
     
 </body>
 </html>
