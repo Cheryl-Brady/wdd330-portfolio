@@ -12,7 +12,68 @@
     <h2>Novice to Ninja</h2>
     <p>
         <u>Chapter 11 Summary - Further Functions</u><br>
-            <li></li>
+        <li>Functions have built-in properties such as length , but can have custom properties added.</li>    
+        <li>The length property in functions returns the number of parameters the function has.</li>
+            <li>The call() method can be used to set the value of this inside a function to an<br>
+                object that is provided as the first argument.</li>
+            <li>All functions have call() and apply() methods that can invoke a function with the<br>
+               value of this bound to an object that is provided as an argument.</li>
+        <li>Immediately Invoked Function Expressions or IIFEs are functions that are enclosed in <br>
+          parentheses and immediately followed by double parentheses so they’re invoked. They are<br>
+           useful for namespacing variables and setting default values.</li>
+        <li>Functions are able to dynamically redefine themselves in the body of the function,<br>
+           depending on certain conditions.</li>
+        <li>A recursive function will keep invoking itself until a certain condition is met.</li>
+        <li>Callbacks are frequently used in asynchronous programming as part of the event loop.<br>
+           This means that a program can continue to run in a single thread while waiting for another<br>
+            task to be completed.</li>
+        <li>Promises can be used instead of callbacks to deal with multiple asynchronous actions in sequence.<br>
+           They also provide a nicer mechanism for handling errors.</li>
+        <li>Functions that return other functions are known as higher-order functions.</li>
+        <li>A closure is the process of keeping a reference to a variable available outside the scope<br>
+           of the function it was originally defined in.</li>
+        <li>A generator is created by placing an asterisk character (*) after the function keyword.</li>
+        <li>A generator function will return an iterator object that provides a next() method, which<br>
+           returns the next value in a sequence that is defined in the generator function.</li>
+        <li>Functional programming involves breaking processes down into steps that can be applied<br>
+           as a series of functions.</li>
+        <li>Pure functions are functions that don't rely on the state of the code they are called from,<br>
+           have no side-effects, and always give the same result when given the same arguments<br>
+            (referential transparency).</li>
+        <li>Currying or partial application is the process of applying one argument at a time to a<br>
+           function. A new function is returned until all the arguments have been used.</li>
+        </ul>
+
+        <u>Chapter 13 Summary - AJAX</u>
+        <ul>
+          <li>Ajax is a technique that allows web pages to communicate asynchronously with a server,<br>
+             and it dynamically updates web pages without reloading. This enables data to be sent and<br>
+              received in the background, as well as portions of a page to be updated in response to<br>
+               user events, while the rest of the program continues to run.</li>
+          <li>AJAX = A: Asynchronous, Ja: JavaScript, X: XML</li>
+            <ul>
+              <li>When the term Ajax was originally coined, XML documents were often used to return data.<br>
+                 Many different types of data can be sent, but by far the most commonly used in Ajax<br>
+                  nowadays is JSON, which is more lightweight and easier to parse than XML.</li>
+            </ul>
+          <li>Ajax can be used for making partial page updates without having to do a full page reload.</li>
+          <li>Ajax can be used for communicating with external APIs.</li>
+          <li>Ajax requests can be made using the Fetch API.</li>
+          <li>FetchAPI = The Fetch API provides a global fetch() method that only has one mandatory argument,<br>
+             which is the URL of the resource you wish to fetch. </li>
+             <ul>
+               <li>Example:  fetch('https://example.com/data')<br>
+                .then( // code that handles the response )<br>
+                .catch( // code that runs if the server returns an error )</li>
+             </ul>
+          <li>The Response interface allows you to control the response received from a request or to<br>
+             create your own response objects.</li>
+          <li>The Request interface allows you to create a request object that contains information<br>
+             about the request being made, such as the URL and headers.</li>
+          <li>The Headers interface allows you to create HTTP headers that can be added to a request<br>
+             or response object.</li>
+          <li>Requests can retrieve data using a GET request, or send data using a POST request.</li>
+          <li>The FormData interface makes it easier to send data from forms.</li>
         </ul>
     </p>
 
