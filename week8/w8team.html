@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang-"en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 Team Activity</title>
+    <style></style>
+</head>
+<body>
+    <h1>Week 8 Team Activity - Star Wars API</h1>
+
+    <div id="starWars">
+        <h2>Star Wars List</h2>
+        <ul id="starWarsList">
+
+        </ul>
+        <button id="starWarsBtn" onclick="getStarWars('urlPlaceholder')">List Star Wars Characters</button>
+    </div>
+
+    <script>
+        const btn = document.querySelector('#starWarsBtn');
+
+        async function getStarWars(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw Error(response.statusText)
+                } else {
+                    const fetchJson = await response.json();
+                    console.log(fetchJson);
+                    renderStarWars(fetchJson)
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        function renderStarWars(data) {
+            const starWarsContainer = document.querySelector('#starWarsList');
+
+            if (data.next) {
+                btn.textContent = "Show More";
+                btn.setAttribute('onclick', `getStarWars('${data.next}')`)
+            }
+
+            data.results.forEach( character => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML =
+                `
+                    <span class="char-name">${character.?name?}</span>
+                    <button class="view-btn" onclick="getDetails('${character.?name?}', '${character.?url?}')">View</button>
+                `
+                listItem.id = character.?name?;
+                starWarsContainer.appendChild(listItem);
+            })
+        }
+
+        function getDetails(id, url)  {
+            fetch(url)
+                .then( res => res.json() )
+                .then( json => {
+                    console.log('DETAILS ', json)
+                    var li = document.getElementById(id);
+                    var div = document.createElement('div');
+                    div.innerHTML = 
+                    `
+                        <img src="${json.?????}" />
+                    `
+                    li.lastElementChild.remove();
+                    li.appendChild(div);
+                })
+        }
+
+    </script>
+
+</body>
+
+</html>
