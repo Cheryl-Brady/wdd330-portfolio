@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang-"en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
         <ul id="starWarsList">
 
         </ul>
-        <button id="starWarsBtn" onclick="getStarWars('urlPlaceholder')">List Star Wars Characters</button>
+        <button id="starWarsBtn" onclick="getStarWars('https://swapi.dev/api/starships')">List Star Wars Ships</button>
     </div>
 
     <script>
@@ -23,6 +23,7 @@
         async function getStarWars(url) {
             try {
                 const response = await fetch(url);
+                console.log(response);
                 if (!response.ok) {
                     throw Error(response.statusText)
                 } else {
@@ -43,14 +44,14 @@
                 btn.setAttribute('onclick', `getStarWars('${data.next}')`)
             }
 
-            data.results.forEach( character => {
+            data.results.forEach( ship => {
                 const listItem = document.createElement('li');
                 listItem.innerHTML =
                 `
-                    <span class="char-name">${character.?name?}</span>
-                    <button class="view-btn" onclick="getDetails('${character.?name?}', '${character.?url?}')">View</button>
+                    <span class="ship-name">${ship.name}</span>
+                    <button class="view-btn" onclick="getDetails('${ship.name}', '${ship.url}')">View</button>
                 `
-                listItem.id = character.?name?;
+                listItem.id = ship.name;
                 starWarsContainer.appendChild(listItem);
             })
         }
@@ -60,14 +61,18 @@
                 .then( res => res.json() )
                 .then( json => {
                     console.log('DETAILS ', json)
-                    var li = document.getElementById(id);
-                    var div = document.createElement('div');
-                    div.innerHTML = 
-                    `
-                        <img src="${json.?????}" />
-                    `
+                    
+                    
+                        for (const [key, value] of Object.entries(json)) {
+                            var li = document.getElementById(id);
+                            var div = document.createElement('div');
+                            div.innerHTML = ` ${key}: ${json[key]} `;
+                            li.appendChild(div);
+                        }
+
+                             
                     li.lastElementChild.remove();
-                    li.appendChild(div);
+                    
                 })
         }
 

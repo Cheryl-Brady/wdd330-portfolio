@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 - Notes</title>
+  </head>
+
+  <body>
+    <h1>Week 7 - Notes</h1>
+    
+    <h2>HTML5 & CSS3 for the Real World</h2>
+    <p>
+        <u>Chapter 8 Summary - Transforms and Transitions</u><br>
+        <ul>
+          <li>The "transform" property lets you translate, rotate, scale,<br>
+              and/or skew any elements on the page.</li>
+          <li>We can manipulate an elements appearance using transform functions.</li>
+          <li>Translate Functions allow you to move elements left, right, up, & down<br>
+              - similar to "position: relative" but using translate allows you to<br>
+              move elements without impacting the flow of the document.</li>
+              <ul>
+                <li>translate(x,y) function moves an element x from the LEFT,<br>
+                    and y from the TOP.</li>
+                <li>Ex:  .ad h1:hover span { transform: translate(45px, -45px); }</li>
+                <li>For only up or down use:  transform: translateX(45px); }<br>
+                    -OR- transform: translateY(-45px); }<br>
+                    * Note: Need to add "display: inline-block;" to the span for this to work.</li>
+              </ul>
+          <li>scale(x,y) function:  scales by the defined factors horizontally then vertically.</li>
+              <ul>
+                <li>If only one value is provided it will be used for both x and y.</li>
+                <li>It grows and shrinks from its center.</li>
+                <li>scale(1) would keep the image the same.</li>
+                <li>scale(2) would double it.</li>
+                <li>scale(0.5) would halve it.</li>
+              </ul>
+          <li>rotate() function: rotates around the point of origin.</li>
+              <ul>
+                <li>rotate(90deg) turns the image to face right.</li>
+                <li>rotate(180deg) turns the image upsidedown.</li>
+                <li>rotate(-90deg) turns it to face left.</li>
+                <li>*Note:  positive numbers turn it clockwise, negative turns it counter-clockwise.</li>
+              </ul>
+          <li>skew(x,y) function: specifies a skew along the x and y axes.<br>
+              If a second parameter is omitted, the skew will only occur on the x axis.</li>
+          <li>Transitions:  they allow the values of CSS properties to change over time,<br>
+              providing simple animations.</li>
+              <ul>
+                <li>Transitions are declared along with the regular styles on an element.</li>
+                <li>Steps to create a simple transition using only CSS:</li>
+                  <ol>
+                    <li>Declare the original state of the element in the default style declaration.</li>
+                    <li>Decalre the final state of your transitioned element; for example a :hover state.</li>
+                    <li>Include the transition functions in your <b>default</b> style declaration<br>
+                        using the transition properties - including: transition-property, <br>
+                        transition-duration, transition-timing-function, & transition-delay.</li>
+                  </ol>
+              </ul>
+          <li>Animations:  unlike transitions, CSS animations allow you to control each step of<br>
+              an animation via keyframes.</li>
+              <ul>
+                <li>A <b>keyframe</b> is a snapshot that defines a starting or end point of any smooth transition.</li>
+                <li>To animate an element, you first create a named animation, then attach it to an element in<br>
+                    that elements property declaration block.</li>
+                <li>To create an animation, use the @keyframes rule.</li>
+                <li>Animation Properties:  animation-name, ..-duration, ..-timing-function, ..-iteration-count,<br>
+                    ..-direction, ..-delay, ..-fill-mode, ..-play-state</li>
+              </ul>      
+        </ul>
+    </p>
+        
+    <p>
+      <u>Chapter 12 Summary - Canvas, SVG, and Drag and Drop</u>
+        <ul>
+          <li>Canvas: allows the ability to draw anything useing JavaScript. <br>
+              Improves performance by avoiding the need to download images from the network.</li>
+          <li>First step is to add a canvas element to the page.</li>
+          <li>All drawing on the canvas happens via the Canvas JavaScript API.</li>
+          <li>Access canvas functions through canvas.js</li>
+          <li>Use the toDataURL method to save a local copy of a canvas drawing, then right<br>
+            click on the image at that URL to save as a PNG or JPEG.</li>
+          <li>SVG = Scalable Vector Graphics - a specific file format that allows you to describe<br>
+              vector graphics using XML.</li>
+          <li>SVG's preserve their quality as you blow them up or shrink them down.</li>
+          <li>The Drag and Drop API allows us to specify that certain elements are draggable,<br>
+              and then specify what should happen when these draggable elements are dragged<br>
+              over or dropped onto other elements on the page.</li>
+          <li>To make an image draggable, add the draggable attribute to the img.</li>
+
+        </ul>
+    </p>
+
+  </body>
+</html>
