@@ -13,14 +13,91 @@
     <p>
         <u>MDN: Validating Forms</u><br>
         <ul>
-            <li></li>
+            <li>Client-side validation is an initial check on the data a user enters into an form.</li>
+            <li>3 Main reasons to validate forms on the client side:</li>
+              <ol>
+                <li><b>We want to get the right data, in the right format.</b><br>
+                  Our applications won't work properly if our users' data is stored in the wrong format,<br>
+                    is incorrect, or is omitted altogether.</li>
+                <li><b>We want to protect our users' data.</b><br>
+                  Forcing our users to enter secure passwords makes it easier to protect<br>
+                    their account information.</li>
+                <li><b>We want to protect ourselves.</b><br>
+                  There are many ways that malicious users can misuse unprotected forms to<br>
+                    damage the application</li>
+              </ol>
+            <li>Types of client-side validation:  Built in form (uses HTML5 features)<br>
+             & JavaScript.</li>
+            <li>Using HTML5 form controls gives the ability to validate most user data without using JS.<br>
+            This is done by using validation on form elements like these:</li>
+              <ul>
+                <li><u>required</u>: Specifies whether a form field needs to be filled in before the form can be submitted.</li>
+                <li><u>minlength</u> and <u>maxlength</u>: Specifies the minimum and maximum length of textual data (strings)</li>
+                <li><u>min</u> and <u>max</u>: Specifies the minimum and maximum values of numerical input types</li>
+                <li><u>type</u>: Specifies whether the data needs to be a number, an email address, or some other specific preset type. </li>
+                <li><u>pattern</u>: Specifies a regular expression that defines a pattern the entered data needs to follow.</li>
+              </ul>
+            <li>You can use the CSS Pseudo classes :valid and :invalid with those form elements to style accordingly.</li>
+            <li>To set up custom validations, use JavaScript.</li>
+            <li>In order to reduce the user's frustration, it's very important to provide as much helpful information as<br>
+               possible in order to guide them in correcting their inputs. You should offer up-front suggestions so they<br>
+                know what's expected, as well as clear error messages.</li>
         </ul>
     </p>
         
     <p>
       <u>MDN: Using Fetch</u>
         <ul>
-          <li></li>
+          <li>The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline,<br>
+             such as requests and responses. It also provides a global fetch() method that provides an easy,<br>
+              logical way to fetch resources asynchronously across the network.</li>
+          <li>The fetch specification differs from jQuery.ajax() in the following ways:</li>
+          <ol>
+            <li>The Promise returned from fetch() <b>won’t reject on HTTP error status</b> even if the response is an HTTP 404 or 500.<br>
+               Instead, it will resolve normally (with ok status set to false), and it will only reject on network failure<br>
+                or if anything prevented the request from completing.</li>
+            <li>fetch() <b>won’t send cross-origin cookies</b> unless you set the credentials init option.<br>
+               (Since April 2018. The spec changed the default credentials policy to same-origin.</li>
+          </ol>
+          <li>A basic fetch request is really simple to set up. Have a look at the following code:<br>
+            fetch('http://example.com/movies.json')<br>
+            .then(response => response.json())<br>
+            .then(data => console.log(data));<br>
+            Here we are fetching a JSON file across the network and printing it to the console.<br>
+             The simplest use of fetch() takes one argument — the path to the resource you want to fetch —<br>
+              and returns a promise containing the response (a Response object).</li>
+          <li>The fetch() method can optionally accept a second parameter, an <b>init</b> object that allows you<br>
+             to control a number of different settings:</li>
+             <ul>
+               <li>Sending a request with credentials included:</li>
+                <ul>
+                  <li>To cause browsers to send a request with credentials included on both same-origin and cross-origin calls,<br>
+                    add credentials: 'include' to the init object you pass to the fetch() method.<br>
+                   fetch('htts://example.com', { <br>
+                     credentials: 'include' <br>
+                   });</li>
+                  <li>If you only want to send credentials if the request URL is on the same origin as the calling script,<br>
+                     add credentials: 'same-origin'.</li>
+                  <li>To instead ensure browsers don’t include credentials in the request, use credentials: 'omit'.</li>
+                </ul>
+              <li>Uploading JSON data: Use fetch() to POST JSON-encoded data.</li>
+              <li>Uploading a file:  Files can be uploaded using an HTML <input type="file" /> input element,<br>
+                  FormData() and fetch().</li>
+              <li>Uploading multiple files:  Files can be uploaded using an HTML <input type="file" multiple /> input element,<br>
+                 FormData() and fetch().</li>
+              <li>Processing a text file line by line: The chunks that are read from a response are not broken neatly at line<br>
+                 boundaries and are Uint8Arrays, not strings. If you want to fetch a text file and process it line by line,<br>
+                 it is up to you to handle these complications. </li>
+              <li>Checking that the fetch was successful: An accurate check for a successful fetch() would include checking<br>
+                 that the promise resolved, then checking that the Response.ok property has a value of true. </li>
+              <li>Supplying your own request object: Instead of passing a path to the resource you want to request into the<br>
+                 fetch() call, you can create a request object using the Request() constructor, and pass that in as a fetch()<br>
+                  method argument.<br>
+                  Request() accepts exactly the same parameters as the fetch() method. You can even pass in an existing request<br>
+                   object to create a copy of it: <br>
+                   const anotherRequest = new Request(myRequest, myInit);</li>
+             </ul>
+
         </ul>
     </p>
 
