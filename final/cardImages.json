@@ -1,68 +1,35 @@
 [
     {
         "name": "Baptism",
-        "pictureId": "01",
         "image": "images/baptism-sm.jpg"
     },
     {
         "name": "Book of Mormon",
-        "pictureId": "02",
         "image": "images/bom-sm.jpg"
     },
     {
-        "name": "LDS Church Building",
-        "pictureId": "03",
-        "image": "images/church-sm.jpg"
-    },
-    {
         "name": "LDS Missionaries",
-        "pictureId": "04",
-        "image": "images/elders-sm.jpg"
+        "image": "images/elders-sm.png"
     },
     {
         "name": "The First Vision",
-        "pictureId": "05",
         "image": "images/first-vision-sm.jpg"
     },
     {
-        "name": "The Holy Bible",
-        "pictureId": "06",
-        "image": "images/holy-bible-sm.jpg"
-    },
-    {
-        "name": "Jesus in a Red Robe",
-        "pictureId": "07",
-        "image": "images/jesus-red-sm.jpg"
-    },
-    {
         "name": "Jesus in a White Robe",
-        "pictureId": "08",
         "image": "images/jesus-white-sm.jpg"
     },
     {
-        "name": "Prayer",
-        "pictureId": "09",
-        "image": "images/prayer-sm.jpg"
-    },
-    {
         "name": "Russel M. Nelson",
-        "pictureId": "10",
         "image": "images/prophet-sm.jpg"
     },
     {
         "name": "Sacrament",
-        "pictureId": "11",
-        "image": "images/sacrament-sm.jpg"
+        "image": "images/sacrament-sm.png"
     },
     {
         "name": "Salt Lake Temple",
-        "pictureId": "12",
         "image": "images/salt-lake-temple-sm.jpg"
-    },
-    {
-        "name": "DC Temple",
-        "pictureId": "13",
-        "image": "images/temple-card.jpg"
     }
 
 ]
