@@ -11,7 +11,7 @@ const goodbye = function(){
 }
 
 // Function Expressions - a named function
-const goodbye = function bye(){
+const bye = function bye(){
     console.log('Bye-bye!');
 }
 
